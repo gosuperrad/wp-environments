@@ -3,9 +3,9 @@ Contributors: Super Rad
 Tags: environments, development, production, staging
 Donate link: https://paypal.me/superraddev
 Requires at least: 5.7
-Tested up to: 6.7
+Tested up to: 7.0
 Requires PHP: 8.0
-Stable tag: 2.0.1
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,10 +33,9 @@ Have you ever been scared of making changes because you thought you were on your
 
 == Changelog ==
 
-= 2.0.1 =
-* Restrict environment styling to logged-in users.
-* Inject per-environment colors as CSS custom properties (Local, Development, Staging, Production).
-* Add an optional "Force Login" setting under Tools > Environment.
-
 = 1.0.0 =
-* Initial release.
+* Color-coded admin bar background and label per environment (Local, Development, Staging, Production), based on wp_get_environment_type().
+* Per-environment colors injected as CSS custom properties from PHP.
+* Environment accent extended across the admin menu and admin-bar dropdowns; hover, focus, and current states stay on-palette across every admin color scheme.
+* Environment styling limited to logged-in users.
+* Optional "Force Login" setting under Tools > Environment.

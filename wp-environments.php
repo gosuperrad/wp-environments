@@ -6,7 +6,7 @@
  * Author: Super Rad⚡️
  * Author URI: https://gosuperrad.com/?utm_source=wp-environments&utm_medium=website&utm_campaign=plugins-page
  * Text Domain: wp-environments
- * Version: 2.0.1
+ * Version: 1.0.0
  * Requires PHP: 8.0
  * Requires at least: 5.7
  * Update URI: https://github.com/gosuperrad/wp-environments

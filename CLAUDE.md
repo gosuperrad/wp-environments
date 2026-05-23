@@ -39,7 +39,7 @@ save. The per-environment colors are CSS custom properties injected inline from 
 
 The version lives in **three files that must stay in sync**: the `Version:` header in
 `wp-environments.php`, `Stable tag:` in `readme.txt`, and `version` in `package.json`
-(currently all `2.0.1`). Use `/release <version>` to bump all three plus the changelog.
+(currently all `1.0.0`). Use `/release <version>` to bump all three plus the changelog.
 
 ## Checks
 
