@@ -1,0 +1,13 @@
+# Dependencies
+/node_modules/
+/vendor/
+
+# Build / distribution artifacts (npm run dist)
+/wp-environments/
+/wp-environments.zip
+
+# Test artifacts
+.phpunit.result.cache
+
+# OS / editor cruft
+.DS_Store

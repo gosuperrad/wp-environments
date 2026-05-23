@@ -1,0 +1,39 @@
+:root{
+  --wpe-label:"";
+  --wpe-base-color:#23282d;
+  --wpe-highlight-color:#72aee6;
+}
+#wp-admin-bar-site-name > .ab-item::after{
+  text-transform:uppercase;
+  font-weight:700;
+  content:var(--wpe-label);
+}
+#wpadminbar{
+  background:var(--wpe-base-color);
+}
+
+#adminmenu li a:focus div.wp-menu-image::before,
+#adminmenu li.opensub div.wp-menu-image::before,
+#adminmenu li:hover div.wp-menu-image::before,
+#adminmenu .wp-submenu a:focus,
+#adminmenu .wp-submenu a:hover,
+#adminmenu a:hover, #adminmenu li.menu-top > a:focus,
+#adminmenu a:hover,
+#adminmenu li.menu-top:hover,
+#adminmenu li.opensub > a.menu-top,
+#adminmenu li > a.menu-top:focus{
+  color:var(--wpe-highlight-color);
+}
+
+#adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head,
+#adminmenu .wp-menu-arrow, #adminmenu .wp-menu-arrow div,
+#adminmenu li.current a.menu-top,
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu{
+  background-color:var(--wpe-base-color);
+}
+
+.notice-success, div.updated{
+  border-left-color:var(--wpe-highlight-color);
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Njc3Mvd3AtZW52aXJvbm1lbnRzLnNjc3MiLCJ3cC1lbnZpcm9ubWVudHMuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0MsY0FBQTtFQUNBLHdCQUFBO0VBQ0EsNkJBQUE7QUNDRDtBREtDO0VBQ0Msd0JBQUE7RUFDQSxlQUFBO0VBQ0Esd0JBQUE7QUNERjtBRE9BO0VBQ0MsZ0NBQUE7QUNIRDs7QURNQTs7Ozs7Ozs7OztFQVVDLGdDQUFBO0FDSEQ7O0FETUE7Ozs7RUFJQyxzQ0FBQTtBQ0hEOztBRE1BO0VBQ0MsNENBQUE7QUNIRCIsImZpbGUiOiJ3cC1lbnZpcm9ubWVudHMuY3NzIn0= */
