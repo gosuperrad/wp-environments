@@ -9,9 +9,9 @@ disable-model-invocation: true
 Usage: `/release <version>` (e.g. `/release 2.1.0`). The version in `$ARGUMENTS` is
 the new SemVer version to ship.
 
-The plugin's version currently lives in three files that disagree (`wp-environments.php`
-header says `2.0.1`, `readme.txt` Stable tag and `package.json` both say `1.0.0`). A
-release reconciles all of them to the new version.
+The plugin's version lives in three files that must stay in sync — the `Version:`
+header in `wp-environments.php`, `Stable tag:` in `readme.txt`, and `version` in
+`package.json`. A release reconciles all of them to the new version.
 
 ## Steps
 

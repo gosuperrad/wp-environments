@@ -10,10 +10,8 @@ admin bar per environment — local / development / staging / production — bas
 
 It physically lives inside a Roots/Bedrock monorepo at `web/app/plugins/`, but it
 is **its own git repo**: default branch is `main`, and the live remote is GitHub —
-`git@github.com:gosuperrad/wp-environments.git`. (Stale URLs
-in the plugin header and `package.json` point at code.superrad.dev / lab.superrad.dev;
-ignore them — GitHub is authoritative.) Treat it as a self-contained plugin, not as
-part of the surrounding `backend/` project.
+`git@github.com:gosuperrad/wp-environments.git`. Treat it as a self-contained plugin,
+not as part of the surrounding `backend/` project.
 
 ## Code style — WordPress Coding Standards
 

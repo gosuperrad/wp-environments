@@ -32,7 +32,7 @@
 		"build": "run-s 'build:*'",
 		"watch": "npm start",
 		"clean": "rm -rf wp-environments && rm -rf wp-environments.zip",
-		"copy": "rsync -avz --delete --exclude='.*' --exclude='bump.sh' --exclude='node_modules' --exclude='vendor' --exclude='tests' --exclude='package.json' --exclude='package-lock.json' --exclude='yarn.lock' --exclude='composer.json' --exclude='composer.lock' --exclude='phpcs.xml.dist' --exclude='phpunit.xml.dist' --exclude='CLAUDE.md' --exclude='README.md' --exclude='.DS_Store' . wp-environments",
+		"copy": "rsync -avz --delete --exclude='.*' --exclude='node_modules' --exclude='vendor' --exclude='tests' --exclude='package.json' --exclude='package-lock.json' --exclude='yarn.lock' --exclude='composer.json' --exclude='composer.lock' --exclude='phpcs.xml.dist' --exclude='phpunit.xml.dist' --exclude='CLAUDE.md' --exclude='README.md' --exclude='.DS_Store' . wp-environments",
 		"zip": "zip -r wp-environments.zip wp-environments/",
 		"dist": "run-s 'clean' 'build' 'copy' 'zip'"
 	}
