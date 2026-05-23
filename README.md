@@ -22,10 +22,11 @@ Then require it:
 composer require superrad/wp-environments:^1.0
 ```
 
-On [Bedrock](https://roots.io/bedrock/) — or any project that has `composer/installers` —
-this installs to `web/app/plugins/wp-environments/` and resolves the latest `v1.x` tag.
-Use `dev-main` instead of `^1.0` to track the `main` branch. (Private clones need a GitHub
-token in `auth.json` or SSH; this repo is public, so no auth is required.)
+The plugin pulls in `composer/installers`, so it lands in your plugins directory
+automatically — `web/app/plugins/wp-environments/` on [Bedrock](https://roots.io/bedrock/),
+`wp-content/plugins/wp-environments/` otherwise — and resolves the latest `v1.x` tag. Use
+`dev-main` instead of `^1.0` to track the `main` branch. (This repo is public, so no auth is
+needed; a private clone would need a GitHub token in `auth.json` or SSH.)
 
 ### Manual
 
