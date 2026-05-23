@@ -5,10 +5,42 @@ development site and a production site, and you want to be able to easily distin
 
 ## Installation
 
-1. Upload the `wp-environments` directory to the `/wp-content/plugins/` directory.
-2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Set the environment type in wp-config.php using the WP_ENVIRONMENT_TYPE constant. For
-   example: `define( 'WP_ENVIRONMENT_TYPE', 'local' );`
+### Composer (recommended)
+
+The plugin isn't published on Packagist, so add it as a VCS repository in your site's
+`composer.json`:
+
+```json
+"repositories": [
+    { "type": "vcs", "url": "https://github.com/gosuperrad/wp-environments" }
+]
+```
+
+Then require it:
+
+```bash
+composer require superrad/wp-environments:^1.0
+```
+
+On [Bedrock](https://roots.io/bedrock/) — or any project that has `composer/installers` —
+this installs to `web/app/plugins/wp-environments/` and resolves the latest `v1.x` tag.
+Use `dev-main` instead of `^1.0` to track the `main` branch. (Private clones need a GitHub
+token in `auth.json` or SSH; this repo is public, so no auth is required.)
+
+### Manual
+
+1. Download `wp-environments.zip` from the [latest release](https://github.com/gosuperrad/wp-environments/releases/latest).
+2. In the WordPress admin, go to **Plugins → Add New → Upload Plugin** and upload the zip
+   (or unzip it into `wp-content/plugins/`).
+3. Activate the plugin through the **Plugins** menu.
+
+### Configure
+
+Set the environment type in `wp-config.php`:
+
+```php
+define( 'WP_ENVIRONMENT_TYPE', 'local' ); // local | development | staging | production
+```
 
 ## Usage
 
@@ -27,10 +59,10 @@ The default colors are:
      and iteration without major consequences.
 
 3. **Staging**:
-   - **Color**: Yellow or Orange
-   - **Rationale**: Yellow or orange is often used as a signal for caution. Staging is typically a pre-production
-     environment that mirrors production as closely as possible. It's the last line of defense before going live, so
-     extra caution is needed.
+   - **Color**: Purple
+   - **Rationale**: Purple sets staging visibly apart from the other environments. Staging is typically a pre-production
+     environment that mirrors production as closely as possible — the last line of defense before going live — so it
+     gets its own unmistakable color.
 
 4. **Production**:
    - **Color**: Red
