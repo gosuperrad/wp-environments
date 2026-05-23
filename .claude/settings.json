@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_response.filePath // .tool_input.file_path // empty' | { read -r f; case \"$f\" in *.php) err=$(php -l \"$f\" 2>&1) || { echo \"$err\" >&2; exit 2; };; esac; }",
+            "statusMessage": "Checking PHP syntax..."
+          }
+        ]
+      }
+    ]
+  }
+}
