@@ -1,0 +1,39 @@
+{
+	"name": "wp-environments",
+	"version": "2.0.1",
+	"description": "Add a color coded background and label to the admin bar to distinguish between environments.",
+	"homepage": "https://github.com/gosuperrad/wp-environments",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/gosuperrad/wp-environments.git"
+	},
+	"bugs": {
+		"url": "https://github.com/gosuperrad/wp-environments/issues"
+	},
+	"author": "Super Rad",
+	"license": "GPL-2.0 AND MIT",
+	"devDependencies": {
+		"@wordpress/browserslist-config": "^5.28.0",
+		"autoprefixer": "^10.4.16",
+		"chokidar-cli": "^3.0.0",
+		"npm-run-all": "^4.1.5",
+		"postcss": "^8.4.31",
+		"postcss-cli": "^10.1.0",
+		"postcss-discard-comments": "^6.0.0",
+		"sass": "^1.69.5"
+	},
+	"browserslist": [
+		"extends @wordpress/browserslist-config"
+	],
+	"scripts": {
+		"start": "chokidar 'assets/scss/**/*.scss' -c 'npm run build'",
+		"build:style": "sass assets/scss/wp-environments.scss:assets/css/wp-environments.css --load-path=node_modules --trace --style=expanded --source-map",
+		"build:postcss": "postcss assets/css/wp-environments.css -r --u autoprefixer --autoprefixer.browserslist='extends @wordpress/browserslist-config' --u postcss-discard-comments",
+		"build": "run-s 'build:*'",
+		"watch": "npm start",
+		"clean": "rm -rf wp-environments && rm -rf wp-environments.zip",
+		"copy": "rsync -avz --delete --exclude='.*' --exclude='bump.sh' --exclude='node_modules' --exclude='vendor' --exclude='tests' --exclude='package.json' --exclude='package-lock.json' --exclude='yarn.lock' --exclude='composer.json' --exclude='composer.lock' --exclude='phpcs.xml.dist' --exclude='phpunit.xml.dist' --exclude='CLAUDE.md' --exclude='README.md' --exclude='.DS_Store' . wp-environments",
+		"zip": "zip -r wp-environments.zip wp-environments/",
+		"dist": "run-s 'clean' 'build' 'copy' 'zip'"
+	}
+}
