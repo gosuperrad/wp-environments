@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<ruleset name="WP Environments">
+	<description>WordPress Coding Standards for the WP Environments plugin.</description>
+
+	<!-- What to scan. -->
+	<file>.</file>
+	<exclude-pattern>/vendor/</exclude-pattern>
+	<exclude-pattern>/node_modules/</exclude-pattern>
+	<exclude-pattern>/tests/</exclude-pattern>
+	<!-- The dist build copy (npm run dist) nests the plugin name under itself;
+	     anchor to the doubled segment so we don't exclude the plugin root too. -->
+	<exclude-pattern>*/wp-environments/wp-environments/*</exclude-pattern>
+
+	<arg name="extensions" value="php"/>
+	<arg name="colors"/>
+	<!-- Show sniff codes (s) and progress (p). -->
+	<arg value="sp"/>
+
+	<!-- WordPress Coding Standards. -->
+	<rule ref="WordPress"/>
+
+	<!-- Project-specific config. -->
+	<config name="minimum_wp_version" value="5.7"/>
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="wp-environments"/>
+			</property>
+		</properties>
+	</rule>
+</ruleset>
